@@ -21,7 +21,7 @@ def main():
      
      '''pantalla=pygame.display.set_mode([800,500])#dimensiones de la ventana '''
      
-     pygame.display.set_caption("Juego HQ")#titulo del juego
+    ''' pygame.display.set_caption("Juego HQ")#titulo del juego'''
      salir=False
      reloj=pygame.time.Clock()
      blanco=(0,255,0)#cambia el color de la ventana negra a color blanco
@@ -49,7 +49,7 @@ pygame.init()
 pantalla = pygame.display.set_mode([LARGO_PANTALLA, ALTO_PANTALLA])
  
 # creamos el título de la ventana
-pygame.display.set_caption('Test')
+pygame.display.set_caption("Juego HQ")
  
 # lista que almacena todos los sprites
 listade_todoslos_sprites = pygame.sprite.Group()
@@ -68,7 +68,20 @@ listade_todoslos_sprites.add(pared)
 pared = Pared(10,200,100,10)
 pared_list.add(pared)
 listade_todoslos_sprites.add(pared)
-     
+
+
+# creamos al objeto 
+protagonista = Protagonista(50, 50)
+protagonista.paredes = pared_list
+ 
+listade_todoslos_sprites.add(protagonista)
+ 
+reloj = pygame.time.Clock()
+ 
+hecho = False
+ 
+
+
 while salir!=True: #loop principal
          for event in pygame.event.get():
              if event.type==pygame.QUIT:
