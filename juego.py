@@ -1,9 +1,26 @@
 import pygame
 
+import pygame
+ 
+"""
+Constantes globales
+"""
+ 
+# colores
+NEGRO = (255, 0, 255) 
+BLANCO = (255, 255, 255) 
+AZUL = (0, 0, 255)
+ 
+# dimensiones de la pantalla
+LARGO_PANTALLA  = 800
+ALTO_PANTALLA = 600
+
 def main():
      #ccolores de la ventana del juego
      pygame.init() #inicializa los modulos de pygame
-     pantalla=pygame.display.set_mode([800,500])#dimensiones de la ventana 
+     
+     '''pantalla=pygame.display.set_mode([800,500])#dimensiones de la ventana '''
+     
      pygame.display.set_caption("Juego HQ")#titulo del juego
      salir=False
      reloj=pygame.time.Clock()
