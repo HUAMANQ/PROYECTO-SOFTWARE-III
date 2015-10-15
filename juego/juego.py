@@ -91,14 +91,4 @@ while salir!=True: #loop principal
          pygame.display.update()
 listade_todoslos_sprites.update()
 
- 
-listade_todoslos_sprites.draw(pantalla)
- 
-pygame.display.flip()
- 
-reloj.tick(60)
-             
-pygame.quit()
-
-
 main()
