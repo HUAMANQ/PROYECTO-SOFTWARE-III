@@ -1,7 +1,5 @@
 import pygame
 
-import pygame
- 
 """
 Constantes globales
 """
@@ -90,5 +88,10 @@ while salir!=True: #loop principal
          pantalla.fill(blanco)
          pygame.display.update()
 listade_todoslos_sprites.update()
+   listade_todoslos_sprites.update()
+     pantalla.fill(NEGRO)
+     listade_todoslos_sprites.draw(pantalla) 
+     pygame.display.flip()
+     reloj.tick(60)
 
 main()
