@@ -102,8 +102,12 @@ reloj = pygame.time.Clock()
  
 hecho = False
  
-
-
+while not hecho:
+     
+    for evento in pygame.event.get():
+        if evento.type == pygame.QUIT:
+            hecho = True
+'''
 while salir!=True: #loop principal
          for event in pygame.event.get():
              if event.type==pygame.QUIT:
@@ -111,11 +115,11 @@ while salir!=True: #loop principal
                  reloj.tick(20)
          pantalla.fill(blanco)
          pygame.display.update()
+listade_todoslos_sprites.update()'''
 listade_todoslos_sprites.update()
-'''listade_todoslos_sprites.update()
-     pantalla.fill(NEGRO)
-     listade_todoslos_sprites.draw(pantalla) 
-     pygame.display.flip()
-     reloj.tick(60)
-'''
+pantalla.fill(NEGRO)
+listade_todoslos_sprites.draw(pantalla)
+pygame.display.flip()
+reloj.tick(60)
+
 main()
