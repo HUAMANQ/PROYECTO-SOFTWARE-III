@@ -13,16 +13,40 @@ AZUL = (0, 0, 255)
 LARGO_PANTALLA  = 800
 ALTO_PANTALLA = 600
 
-def main():
+'''def main():
      #ccolores de la ventana del juego
      pygame.init() #inicializa los modulos de pygame
      
-     '''pantalla=pygame.display.set_mode([800,500])#dimensiones de la ventana '''
-     
-    ''' pygame.display.set_caption("Juego HQ")#titulo del juego'''
-     salir=False
+     pantalla=pygame.display.set_mode([800,500])#dimensiones de la ventana
+      pygame.display.set_caption("Juego HQ")#titulo del juego
+    salir=False
      reloj=pygame.time.Clock()
      blanco=(0,255,0)#cambia el color de la ventana negra a color blanco
+'''
+     
+class Protagonista(pygame.sprite.Sprite):
+    """ esta clase representa la barra inferior que controla el protagonista. """
+ 
+    # establecemos el vector velocidad
+    cambio_x = 0
+    cambio_y = 0
+    paredes = None
+
+
+        # funcion Constructor 
+    def __init__(self, x, y):
+        #  llama al constructor padre
+        pygame.sprite.Sprite.__init__(self)
+  
+        # establecemos el alto y largo
+        self.image = pygame.Surface([15, 15])
+        self.image.fill(BLANCO)
+ 
+        # establece como origen la esquina superior izquierda.
+        self.rect = self.image.get_rect()
+        self.rect.y = y
+        self.rect.x = x
+    
 class Pared(pygame.sprite.Sprite):
     """ Pared con la que el protagonista puede encontrarse. """
     def __init__(self, x, y, largo, alto):
@@ -88,10 +112,10 @@ while salir!=True: #loop principal
          pantalla.fill(blanco)
          pygame.display.update()
 listade_todoslos_sprites.update()
-   listade_todoslos_sprites.update()
+'''listade_todoslos_sprites.update()
      pantalla.fill(NEGRO)
      listade_todoslos_sprites.draw(pantalla) 
      pygame.display.flip()
      reloj.tick(60)
-
+'''
 main()
