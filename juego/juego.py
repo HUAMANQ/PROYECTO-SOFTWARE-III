@@ -46,7 +46,12 @@ class Protagonista(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
-    
+
+        def cambiovelocidad(self, x, y):
+        """ Cambia la velocidad del protagonista. """
+        self.cambio_x += x
+        self.cambio_y += y
+
 class Pared(pygame.sprite.Sprite):
     """ Pared con la que el protagonista puede encontrarse. """
     def __init__(self, x, y, largo, alto):
