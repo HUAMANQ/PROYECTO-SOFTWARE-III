@@ -94,8 +94,7 @@ class Pared(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
-         
-         
+                 
 # llamamos a esta función para que la biblioteca Pygame pueda autoiniciarse.
 pygame.init()
  
@@ -125,7 +124,7 @@ listade_todoslos_sprites.add(pared)
 
 
 # creamos al objeto 
-protagonista = Protagonista(50, 50)
+protagonista = Protagonista(20, 20)
 protagonista.paredes = pared_list
  
 listade_todoslos_sprites.add(protagonista)
@@ -139,19 +138,35 @@ while not hecho:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             hecho = True
-'''
-while salir!=True: #loop principal
-         for event in pygame.event.get():
-             if event.type==pygame.QUIT:
-                 salir=True
-                 reloj.tick(20)
-         pantalla.fill(blanco)
-         pygame.display.update()
-listade_todoslos_sprites.update()'''
-listade_todoslos_sprites.update()
-pantalla.fill(NEGRO)
-listade_todoslos_sprites.draw(pantalla)
-pygame.display.flip()
-reloj.tick(60)
-
-main()
+ 
+        elif evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_LEFT:
+                protagonista.cambiovelocidad(-3,0)
+            elif evento.key == pygame.K_RIGHT:
+                protagonista.cambiovelocidad(3,0)
+            elif evento.key == pygame.K_UP:
+                protagonista.cambiovelocidad(0,-3)
+            elif evento.key == pygame.K_DOWN:
+                protagonista.cambiovelocidad(0,3)
+                 
+        elif evento.type == pygame.KEYUP:
+            if evento.key == pygame.K_LEFT:
+                protagonista.cambiovelocidad(3,0)
+            elif evento.key == pygame.K_RIGHT:
+                protagonista.cambiovelocidad(-3,0)
+            elif evento.key == pygame.K_UP:
+                protagonista.cambiovelocidad(0,3)
+            elif evento.key == pygame.K_DOWN:
+                protagonista.cambiovelocidad(0,-3)
+  
+    listade_todoslos_sprites.update()
+     
+    pantalla.fill(NEGRO)
+     
+    listade_todoslos_sprites.draw(pantalla)
+ 
+    pygame.display.flip()
+ 
+    reloj.tick(60)
+             
+pygame.quit()
