@@ -48,7 +48,7 @@ class Protagonista(pygame.sprite.Sprite):
         self.rect.x = x
 
         def cambiovelocidad(self, x, y):
-        """ Cambia la velocidad del protagonista. """
+            """ Cambia la velocidad del protagonista. """
         self.cambio_x += x
         self.cambio_y += y
 
@@ -84,21 +84,250 @@ listade_todoslos_sprites = pygame.sprite.Group()
 # construimos las paredes. (x_pos, y_pos, largo, alto)
 pared_list = pygame.sprite.Group()
  
-pared = Pared(0,0,10,600)
+pared = Pared(10,10,500,10)
 pared_list.add(pared)
 listade_todoslos_sprites.add(pared)
  
-pared = Pared(10,0,790,10)
-pared_list.add(pared)
-listade_todoslos_sprites.add(pared)
- 
-pared = Pared(10,200,100,10)
+pared = Pared(10,10,10,500)
 pared_list.add(pared)
 listade_todoslos_sprites.add(pared)
 
+pared = Pared(10,500,500,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+ 
+pared = Pared(500,10,10,500)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+ 
+pared = Pared(40,40,50,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(70,70,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(100,100,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(140,120,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(110,140,70,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(200,200,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(210,240,200,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(10,10,500,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+ 
+pared = Pared(10,10,10,500)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(10,500,500,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+ 
+pared = Pared(500,10,10,500)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+ 
+pared = Pared(40,40,50,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(70,70,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(100,100,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(140,120,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(110,140,70,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(200,200,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(210,240,200,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(300,120,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(300,140,70,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(40,200,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(210,400,270,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(280,280,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(300,100,200,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(400,300,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(300,300,170,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(100,300,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(300,200,170,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+pared = Pared(60,300,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(60,300,170,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(60,430,170,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(60,460,170,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(130,270,10,240)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(35,350,10,150)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+#para abrir paredes 
+listade_todoslos_sprites.add(pared)
+pared = Pared(400,35,10,185)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(220,40,10,140)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(170,35,10,210)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(250,40,10,170)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(170,300,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(480,340,10,140)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(500,300,10,100)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(450,30,10,140)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(320,430,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(350,340,10,140)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(250,270,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(450,240,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(370,270,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(450,430,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(390,430,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(420,410,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(290,410,10,70)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(310,340,10,50)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+
+listade_todoslos_sprites.add(pared)
+pared = Pared(60,60,100,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(200,130,100,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(20,135,65,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(20,100,30,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(170,360,70,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(170,40,50,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(260,70,100,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(70,240,110,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(50,170,100,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
+pared = Pared(20,200,100,10)
+pared_list.add(pared)
+listade_todoslos_sprites.add(pared)
 
 # creamos al objeto 
-protagonista = Protagonista(50, 50)
+protagonista = Protagonista(20, 20)
 protagonista.paredes = pared_list
  
 listade_todoslos_sprites.add(protagonista)
@@ -112,19 +341,36 @@ while not hecho:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             hecho = True
-'''
-while salir!=True: #loop principal
-         for event in pygame.event.get():
-             if event.type==pygame.QUIT:
-                 salir=True
-                 reloj.tick(20)
-         pantalla.fill(blanco)
-         pygame.display.update()
-listade_todoslos_sprites.update()'''
-listade_todoslos_sprites.update()
-pantalla.fill(NEGRO)
-listade_todoslos_sprites.draw(pantalla)
-pygame.display.flip()
-reloj.tick(60)
-
-main()
+ 
+        elif evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_LEFT:
+                protagonista.cambiovelocidad(-3,0)
+            elif evento.key == pygame.K_RIGHT:
+                protagonista.cambiovelocidad(3,0)
+            elif evento.key == pygame.K_UP:
+                protagonista.cambiovelocidad(0,-3)
+            elif evento.key == pygame.K_DOWN:
+                protagonista.cambiovelocidad(0,3)
+                 
+        elif evento.type == pygame.KEYUP:
+            if evento.key == pygame.K_LEFT:
+                protagonista.cambiovelocidad(3,0)
+            elif evento.key == pygame.K_RIGHT:
+                protagonista.cambiovelocidad(-3,0)
+            elif evento.key == pygame.K_UP:
+                protagonista.cambiovelocidad(0,3)
+            elif evento.key == pygame.K_DOWN:
+                protagonista.cambiovelocidad(0,-3)
+    listade_todoslos_sprites.update()
+    # -- Dibujamos todo
+    # Limpiamos la pantalla
+    pantalla.fill(NEGRO)
+     
+    listade_todoslos_sprites.draw(pantalla)
+  # Actualizamos la pantalla
+    pygame.display.flip()
+ 
+    reloj.tick(60)
+             
+pygame.quit()
+#main()
