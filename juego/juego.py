@@ -45,15 +45,14 @@ class Protagonista(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
-<<<<<<< HEAD
      
     def cambiovelocidad(self, x, y):
         """ Cambia la velocidad del protagonista. """
-=======
+
 
         def cambiovelocidad(self, x, y):
             """ Cambia la velocidad del protagonista. """
->>>>>>> cronograma
+
         self.cambio_x += x
         self.cambio_y += y
          
@@ -393,15 +392,13 @@ while not hecho:
                 protagonista.cambiovelocidad(0,3)
             elif evento.key == pygame.K_DOWN:
                 protagonista.cambiovelocidad(0,-3)
-<<<<<<< HEAD
-  
+
     listade_todoslos_sprites.update()
      
     pantalla.fill(NEGRO)
      
     listade_todoslos_sprites.draw(pantalla)
  
-=======
     listade_todoslos_sprites.update()
     # -- Dibujamos todo
     # Limpiamos la pantalla
@@ -409,13 +406,12 @@ while not hecho:
      
     listade_todoslos_sprites.draw(pantalla)
   # Actualizamos la pantalla
->>>>>>> cronograma
+
     pygame.display.flip()
  
     reloj.tick(60)
              
 pygame.quit()
-<<<<<<< HEAD
-=======
+
 #main()
->>>>>>> cronograma
+
