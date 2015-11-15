@@ -31,9 +31,8 @@ class Protagonista(pygame.sprite.Sprite):
     cambio_x = 0
     cambio_y = 0
     paredes = None
-
-
-        # funcion Constructor 
+     
+    # funcion Constructor 
     def __init__(self, x, y):
         #  llama al constructor padre
         pygame.sprite.Sprite.__init__(self)
@@ -46,12 +45,40 @@ class Protagonista(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.y = y
         self.rect.x = x
-
-        def cambiovelocidad(self, x, y):
+     
+    def cambiovelocidad(self, x, y):
         """ Cambia la velocidad del protagonista. """
         self.cambio_x += x
         self.cambio_y += y
+         
+    def update(self):
+        """ Cambia la velocidad del protagonista. """
+        # Desplazar izquierda/derecha
+        self.rect.x += self.cambio_x
 
+        # hemos chocado contra la pared despues de esta actualizacion?
+        lista_impactos_bloques = pygame.sprite.spritecollide(self, self.paredes, False)
+        for bloque in lista_impactos_bloques:
+            #si nos estamos desplazando hacia la derecha, hacemos que nuestro lado derecho sea el lado izquierdo del objeto que hemos tocado-
+            if self.cambio_x > 0:
+                self.rect.right = bloque.rect.left
+            else:
+                # en caso contrario, si nos desplazamos hacia la izquierda, hacemos lo opuesto.
+                self.rect.left = bloque.rect.right
+ 
+        # desplazar arriba/izquierda
+        self.rect.y += self.cambio_y
+          
+        # comprobamos si hemos chocado contra algo
+        lista_impactos_bloques = pygame.sprite.spritecollide(self, self.paredes, False) 
+        for bloque in lista_impactos_bloques:
+                 
+            # reseteamos nuestra posicion basandonos en la parte superior/inferior del objeto.
+            if self.cambio_y > 0:
+                self.rect.bottom = bloque.rect.top 
+            else:
+                self.rect.top = bloque.rect.bottom
+    
 class Pared(pygame.sprite.Sprite):
     """ Pared con la que el protagonista puede encontrarse. """
     def __init__(self, x, y, largo, alto):
