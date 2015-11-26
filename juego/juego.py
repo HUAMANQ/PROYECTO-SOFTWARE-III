@@ -23,6 +23,16 @@ ALTO_PANTALLA = 600
      reloj=pygame.time.Clock()
      blanco=(0,255,0)#cambia el color de la ventana negra a color blanco
 '''
+# Establecemos el largo y alto de cada segmento de la serpiente
+largodel_segmento = 15
+altodel_segmento = 15
+# Margen entre cada segmento
+margendel_segmento = 3
+ 
+#Velocidad inicial
+cambio_x = largodel_segmento + margendel_segmento
+cambio_y = 0
+
      
 class Protagonista(pygame.sprite.Sprite):
     """ esta clase representa la barra inferior que controla el protagonista. """
@@ -361,45 +371,60 @@ listade_todoslos_sprites.add(pared)
 protagonista = Protagonista(20, 20)
 protagonista.paredes = pared_list
  
-listade_todoslos_sprites.add(protagonista)
+segementos_dela_serpiente = []
+for i in range(15):
+    x = 250 - (largodel_segmento + margendel_segmento) * i
+    y = 30
+    segmento = Protagonista(x, y)
+    segementos_dela_serpiente.append(segmento)
+    listade_todoslos_sprites.add(segmento)
  
+  
 reloj = pygame.time.Clock()
- 
 hecho = False
- 
+  
 while not hecho:
-     
+      
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             hecho = True
- 
-        elif evento.type == pygame.KEYDOWN:
+  
+        # Establecemos la velocidad basándonos en la tecla presionada
+        # Queremos que la velocidad sea la suficiente para mover un segmento
+        # más el margen.
+        if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_LEFT:
-                protagonista.cambiovelocidad(-3,0)
-            elif evento.key == pygame.K_RIGHT:
-                protagonista.cambiovelocidad(3,0)
-            elif evento.key == pygame.K_UP:
-                protagonista.cambiovelocidad(0,-3)
-            elif evento.key == pygame.K_DOWN:
-                protagonista.cambiovelocidad(0,3)
-                 
-        elif evento.type == pygame.KEYUP:
-            if evento.key == pygame.K_LEFT:
-                protagonista.cambiovelocidad(3,0)
-            elif evento.key == pygame.K_RIGHT:
-                protagonista.cambiovelocidad(-3,0)
-            elif evento.key == pygame.K_UP:
-                protagonista.cambiovelocidad(0,3)
-            elif evento.key == pygame.K_DOWN:
-                protagonista.cambiovelocidad(0,-3)
-
-    listade_todoslos_sprites.update()
+                cambio_x = (largodel_segmento + margendel_segmento) * -1
+                cambio_y = 0
+            if evento.key == pygame.K_RIGHT:
+                cambio_x = (largodel_segmento + margendel_segmento)
+                cambio_y = 0
+            if evento.key == pygame.K_UP:
+                cambio_x = 0
+                cambio_y = (altodel_segmento + margendel_segmento) * -1
+            if evento.key == pygame.K_DOWN:
+                cambio_x = 0
+                cambio_y = (altodel_segmento + margendel_segmento)
+                       
+    # Eliminamos el último segmento de la serpiente
+    # .pop() este comando elimina el último objeto de una lista.
+    segmento_viejo = segementos_dela_serpiente.pop()
+    listade_todoslos_sprites.remove(segmento_viejo)
+     
+    # Determinamos dónde aparecerá el nuevo segmento
+    x = segementos_dela_serpiente[0].rect.x + cambio_x
+    y = segementos_dela_serpiente[0].rect.y + cambio_y
+    segmento = Protagonista(x, y)
+     
+    # Insertamos un nuevo segmento en la lista
+    segementos_dela_serpiente.insert(0, segmento)
+    listade_todoslos_sprites.add(segmento)
      
     pantalla.fill(NEGRO)
      
     listade_todoslos_sprites.draw(pantalla)
  
-    listade_todoslos_sprites.update()
+    #listade_todoslos_sprites.update()
     # -- Dibujamos todo
     # Limpiamos la pantalla
     pantalla.fill(NEGRO)
@@ -409,7 +434,7 @@ while not hecho:
 
     pygame.display.flip()
  
-    reloj.tick(60)
+    reloj.tick(5)
              
 pygame.quit()
 
