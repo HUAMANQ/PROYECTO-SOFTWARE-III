@@ -23,6 +23,7 @@ ALTO_PANTALLA = 600
      reloj=pygame.time.Clock()
      blanco=(0,255,0)#cambia el color de la ventana negra a color blanco
 '''
+
 # Establecemos el largo y alto de cada segmento de la serpiente
 largodel_segmento = 15
 altodel_segmento = 15
